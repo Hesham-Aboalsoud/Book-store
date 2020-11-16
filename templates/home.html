@@ -1,19 +1,26 @@
 {% extends '_base.html' %}
 
+{% load static %}
+
 {% block title %} Home {% endblock title %}
 
+
 {% block content %}
+  
+  <h1>Home page</h1>
 
-<h1>Home page</h1>
+  <img class="bookcover" src="{% static 'images/avr_programming.jpg' %}">
+  <img class="bookcover" src="{% static 'images/Making_Things_Smar.jpg' %}">
+  <img class="bookcover" src="{% static 'images/book.jpg' %}">
 
-{% if user.is_authenticated %}
-  Hii {{ user.username  }}
-  <p><a href="{% url 'logout' %}">Log Out</a></p>
-{% else  %}
-  <p>you are not logged In</p>
-  <a href="{% url 'login' %}">Log In</a>
-  <p> <a href="{% url 'signup' %}">Signup</a> </p>
-{% endif %}
+  {% if user.is_authenticated %}
+    Hii {{ user.username  }}
+    <p><a href="{% url 'logout' %}">Log Out</a></p>
+  {% else  %}
+    <p>you are not logged In</p>
+    <a href="{% url 'login' %}">Log In</a>
+    <p> <a href="{% url 'signup' %}">Signup</a> </p>
+  {% endif %}
 
 
 {% endblock content %}
