@@ -6,7 +6,7 @@
 
 
 {% block content %}
-  
+
   <h1>Home page</h1>
 
   <img class="bookcover" src="{% static 'images/avr_programming.jpg' %}">
@@ -15,11 +15,10 @@
 
   {% if user.is_authenticated %}
     Hii {{ user.username  }}
-    <p><a href="{% url 'logout' %}">Log Out</a></p>
+    <p><a href="{% url 'account_logout' %}">Log Out</a></p>
   {% else  %}
     <p>you are not logged In</p>
-    <a href="{% url 'login' %}">Log In</a>
-    <p> <a href="{% url 'signup' %}">Signup</a> </p>
+    
   {% endif %}
 
 
