@@ -4,7 +4,6 @@
 
 {% block title %} Home {% endblock title %}
 
-
 {% block content %}
 
   <h1>Home page</h1>
@@ -12,13 +11,12 @@
   <img class="bookcover" src="{% static 'images/avr_programming.jpg' %}">
   <img class="bookcover" src="{% static 'images/Making_Things_Smar.jpg' %}">
   <img class="bookcover" src="{% static 'images/book.jpg' %}">
-
   {% if user.is_authenticated %}
     Hii {{ user.username  }}
     <p><a href="{% url 'account_logout' %}">Log Out</a></p>
   {% else  %}
     <p>you are not logged In</p>
-    
+
   {% endif %}
 
 
